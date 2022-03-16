@@ -1,4 +1,4 @@
-function(){
+var script_inject=function(){
 globalThis.socket=null;
 globalThis.io=null;
 globalThis.plr=null;
@@ -95,4 +95,6 @@ function SessionStart(data){
     });
 }
 inject();
-}();
+};
+
+module.exports = script_inject; 
