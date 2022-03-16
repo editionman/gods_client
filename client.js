@@ -1,9 +1,10 @@
-var socket=null;
-var io=null;
-var plr=null;
+function(){
+globalThis.socket=null;
+globalThis.io=null;
+globalThis.plr=null;
 //-----------------
-var func_global={};
-var alert_global={};
+globalThis.func_global={};
+globalThis.alert_global={};
 async function loadScript(src) {
     return new Promise(function (resolve, reject) {
         var s;
@@ -58,8 +59,8 @@ connect_socket("https://mon-gods.glitch.me/");
 
 
 
-var tabla=document.getElementById("divTip");
-var body=tabla.getElementsByTagName("tbody");
+globalThis.tabla=document.getElementById("divTip");
+globalThis.body=tabla.getElementsByTagName("tbody");
 function inject(){
 	var username='<td style="width:120px;vertical-align: middle;text-align: middle;">Username: </td><td><input style="width:100px;" type="text" id="username_pg" placeholder="Username" class="mws-button green small"></td>';
 	var password='<td style="width:120px;vertical-align: middle;text-align: middle;">Password: </td><td><input style="width:100px;" type="password" id="password_pg" placeholder="Password" class="mws-button green small"></td>';
@@ -78,9 +79,6 @@ function Func_Login(){
 
 
 function SessionStart(data){
-	var tabla=document.getElementById("divTip");
-	var body=tabla.getElementsByTagName("tbody");
-
 	body[0].childNodes[0].innerHTML="";
 	body[0].innerHTML='<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>\n\t\t\t\t\t\t\t';
 
@@ -96,5 +94,5 @@ function SessionStart(data){
       func_global[e]=new Function(data.funcs[e]);
     });
 }
-
 inject();
+}();
