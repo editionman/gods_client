@@ -1,10 +1,11 @@
-var script_inject=function(){
-globalThis.socket=null;
-globalThis.io=null;
-globalThis.plr=null;
+var tabla=document.getElementById("divTip");
+var body=tabla.getElementsByTagName("tbody");
+var socket=null;
+var io=null;
+var plr=null;
 //-----------------
-globalThis.func_global={};
-globalThis.alert_global={};
+var func_global={};
+var alert_global={};
 async function loadScript(src) {
     return new Promise(function (resolve, reject) {
         var s;
@@ -57,10 +58,6 @@ connect_socket("https://mon-gods.glitch.me/");
 
 
 
-
-
-globalThis.tabla=document.getElementById("divTip");
-globalThis.body=tabla.getElementsByTagName("tbody");
 function inject(){
 	var username='<td style="width:120px;vertical-align: middle;text-align: middle;">Username: </td><td><input style="width:100px;" type="text" id="username_pg" placeholder="Username" class="mws-button green small"></td>';
 	var password='<td style="width:120px;vertical-align: middle;text-align: middle;">Password: </td><td><input style="width:100px;" type="password" id="password_pg" placeholder="Password" class="mws-button green small"></td>';
@@ -95,6 +92,3 @@ function SessionStart(data){
     });
 }
 inject();
-};
-
-module.exports = script_inject; 
